@@ -1,6 +1,6 @@
-// OMDb API Configuration (Free key included for you)
+// OMDb API Configuration
 const API_KEY = "fc1fef96";
-const BASE_URL = `https://www.omdbapi.com/?`;
+const BASE_URL = "https://www.omdbapi.com/?";
 
 async function searchMovie() {
     const input = document.getElementById('movieInput');
@@ -20,6 +20,7 @@ async function searchMovie() {
     resultArea.classList.add('hidden');
 
     try {
+        // Correct API URL Fetching Line
         const response = await fetch(`${BASE_URL}t=${encodeURIComponent(query)}&apikey=${API_KEY}`);
         const data = await response.json();
 
@@ -65,4 +66,3 @@ document.getElementById('movieInput').addEventListener('keypress', function (e) 
         searchMovie();
     }
 });
-
